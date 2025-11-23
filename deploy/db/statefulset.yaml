@@ -37,8 +37,7 @@ spec:
         storageClassName: ""
         selector:
           matchLabels:
-            type: local
-            storage: mysql-sfs
+            storage: petclinic-db
         accessModes:
           - ReadWriteOnce
         resources:
