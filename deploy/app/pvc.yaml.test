@@ -3,6 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: app-pvc
 spec:
+  storageClass: ''
   selector:
     matchLabels:
       type: local
