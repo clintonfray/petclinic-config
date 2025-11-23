@@ -7,13 +7,13 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
-  ingressClassName: "nginx"
+  ingressClassName: "traefik"
   tls:
     - hosts:
-        - petclinic.app.aws.cfdev.co.za	
+        - petclinic.cfdev.co.za	
       secretName: petclinic-tls
   rules:
-    - host: petclinic.app.aws.cfdev.co.za	
+    - host: petclinic.cfdev.co.za	
       http:
         paths:
           - path: /
