@@ -27,3 +27,19 @@ spec:
               value: petclinic
           ports:
             - containerPort: 5432
+          volumeMounts:
+            - name: mysql-pvc
+              mountPath: /var/lib/postgresql
+  volumeClaimTemplates:
+    - metadata:
+        name: mysql-pvc
+      spec:
+        selector:
+          matchLabels:
+            type: local
+            storage: mysql-sfs
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 1G
